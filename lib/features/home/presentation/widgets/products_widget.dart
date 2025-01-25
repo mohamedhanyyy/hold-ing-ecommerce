@@ -45,7 +45,7 @@ class _ProductsWidgetState extends State<ProductsWidget> {
                 itemCount: getProductsCubit.products.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  mainAxisExtent: 230.h,
+                  mainAxisExtent: 280.h,
                   mainAxisSpacing: 7.5,
                   crossAxisSpacing: 7.5,
                 ),

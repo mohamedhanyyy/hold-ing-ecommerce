@@ -19,7 +19,7 @@ class CategoriesWidget extends StatelessWidget {
         return CustomLoadingWidget();
       } else if (state is GetCategoryDone) {
         return SizedBox(
-          height: 100.h,
+          height: 110.h,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {

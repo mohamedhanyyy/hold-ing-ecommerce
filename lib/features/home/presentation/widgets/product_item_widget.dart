@@ -1,6 +1,7 @@
 import 'package:ecommerce/core/extenstions/string_extension.dart';
 import 'package:ecommerce/features/home/data/model/products_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../../core/resources/icons.dart';
@@ -15,30 +16,26 @@ class ProductItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final formattedImage =
-    '${item.images?.first}'.cleanSpecialCharacters();
+    final formattedImage = '${item.images?.first}'.cleanSpecialCharacters();
     return GestureDetector(
       onTap: () {
         Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) =>
-                ProductDetailsScreen(product: item)));
+            builder: (context) => ProductDetailsScreen(product: item)));
       },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            height: 203,
+            height: 203.h,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                color: Colors.grey),
+                borderRadius: BorderRadius.circular(15), color: Colors.grey),
             child: Stack(
               children: [
                 ClipRRect(
                   borderRadius: BorderRadius.circular(15),
                   child: CustomCachedNetworkImage(
-
                     imageUrl: '$formattedImage',
-                    height: 203,
+                    height: 203.h,
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -53,8 +50,7 @@ class ProductItemWidget extends StatelessWidget {
                               return BottomSheet(
                                   onClosing: () {},
                                   builder: (context) =>
-                                      EditProductBottomSheet(
-                                          product: item));
+                                      EditProductBottomSheet(product: item));
                             });
                       },
                       child: CircleAvatar(
